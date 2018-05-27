@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+       
+       
+        .container img {
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            position: absolute;
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <div class = 'container'>
+        <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=597375154,2905536386&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=857208617,3319781484&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1410462070,509649449&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2819933620,2510966712&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=488495735,2572691798&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3526389045,3281568173&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4205517972,1447418891&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3922624088,1229849556&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1336201154,1641132663&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4099410926,66209685&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=114389143,284752011&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=597375154,2905536386&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=857208617,3319781484&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1410462070,509649449&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2819933620,2510966712&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=488495735,2572691798&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3526389045,3281568173&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4205517972,1447418891&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3922624088,1229849556&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1336201154,1641132663&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4099410926,66209685&fm=27&gp=0.jpg" alt="">
+        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=114389143,284752011&fm=27&gp=0.jpg" alt="">
+    </div>
+
+
+    <script>
+        var colNumber
+        var colHeightArr = []
+        colNumber = Math.floor($('body').width()/$('.container img').width())
+
+           for( var i=0; i< colNumber; i++){
+                colHeightArr[i] = 0
+                }
+       
+        $('.container img').on('load',function(){
+            var minHeight = colHeightArr[0]
+            var minIndex =  0
+            for( var i = 0; i< colNumber; i++){
+            if (colHeightArr[i] < minHeight){
+                minHeight = colHeightArr[i]
+                minIndex = i
+                console.log(minHeight)
+                console.log(minIndex)
+            }  }         
+             $(this).css({
+                 left: minIndex * $('.container img').width(),
+                 top: minHeight
+             })
+             colHeightArr[minIndex] += $(this).height()
+            
+
+        })
+        
+
+
+    
+    
+    
+    
+    </script>
+
+
+
+
+</body>
+</html>
